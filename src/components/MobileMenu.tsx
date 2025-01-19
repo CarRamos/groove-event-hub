@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { Link } from "react-router-dom";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -9,11 +10,10 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const menuItems = [
-    { label: "Database View", href: "#" },
-    { label: "Submit Event", href: "#" },
-    { label: "Gallery", href: "#" },
-    { label: "Cities", href: "#" },
-    { label: "Venues", href: "#" },
+    { label: "Home", href: "/" },
+    { label: "Club XYZ", href: "/venues/1" },
+    { label: "Lounge ABC", href: "/venues/2" },
+    { label: "Events", href: "/" },
   ];
 
   const socialLinks = [
@@ -27,7 +27,9 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
       <SheetContent side="left" className="w-[300px] sm:w-[400px]">
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between mb-8">
-            <span className="text-2xl font-bold text-gold">VENUE</span>
+            <Link to="/" className="text-2xl font-bold text-gold" onClick={onClose}>
+              VENUE
+            </Link>
             <Button variant="ghost" size="icon" onClick={onClose}>
               <X className="h-5 w-5" />
             </Button>
@@ -36,13 +38,14 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           <nav className="space-y-6 flex-1">
             <div className="space-y-2">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   className="block px-2 py-1.5 text-sm transition-colors hover:text-gold"
+                  onClick={onClose}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
 
