@@ -82,7 +82,15 @@ export type Database = {
           venue_name?: string
           video_url?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "fk_venue"
+            columns: ["venue_name"]
+            isOneToOne: false
+            referencedRelation: "venues"
+            referencedColumns: ["venue_name"]
+          },
+        ]
       }
       TEST_EVENTS: {
         Row: {
@@ -126,6 +134,72 @@ export type Database = {
           time?: string
           title?: string
           updatedAt?: string
+        }
+        Relationships: []
+      }
+      venues: {
+        Row: {
+          city: string
+          created_at: string | null
+          details: string | null
+          main_image: string | null
+          meta_tags: string | null
+          min_age: string | null
+          neighborhood: string | null
+          promoter_email: string | null
+          slug: string | null
+          social_facebook: string | null
+          social_instagram: string | null
+          social_tiktok: string | null
+          social_whatsapp: string | null
+          ticket_link: string | null
+          updated_at: string | null
+          venue_map_url: string | null
+          venue_name: string
+          video_url: string | null
+          website_url: string | null
+        }
+        Insert: {
+          city: string
+          created_at?: string | null
+          details?: string | null
+          main_image?: string | null
+          meta_tags?: string | null
+          min_age?: string | null
+          neighborhood?: string | null
+          promoter_email?: string | null
+          slug?: string | null
+          social_facebook?: string | null
+          social_instagram?: string | null
+          social_tiktok?: string | null
+          social_whatsapp?: string | null
+          ticket_link?: string | null
+          updated_at?: string | null
+          venue_map_url?: string | null
+          venue_name: string
+          video_url?: string | null
+          website_url?: string | null
+        }
+        Update: {
+          city?: string
+          created_at?: string | null
+          details?: string | null
+          main_image?: string | null
+          meta_tags?: string | null
+          min_age?: string | null
+          neighborhood?: string | null
+          promoter_email?: string | null
+          slug?: string | null
+          social_facebook?: string | null
+          social_instagram?: string | null
+          social_tiktok?: string | null
+          social_whatsapp?: string | null
+          ticket_link?: string | null
+          updated_at?: string | null
+          venue_map_url?: string | null
+          venue_name?: string
+          video_url?: string | null
+          website_url?: string | null
         }
         Relationships: []
       }
