@@ -4,12 +4,10 @@ import { Calendar, MapPin, Share2, Clock, Users, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog } from "@/components/ui/dialog";
 import { useToast } from "@/components/ui/use-toast";
-import EventNavbar from "@/components/EventNavbar";
 import EventSidebar from "@/components/EventSidebar";
 import EventGallery from "@/components/EventGallery";
 import EventFooter from "@/components/EventFooter";
 import GuestlistModal from "@/components/GuestlistModal";
-import MobileMenu from "@/components/MobileMenu";
 
 // Mock event data fetch
 const fetchEventData = async () => {
@@ -38,7 +36,6 @@ const fetchEventData = async () => {
 };
 
 const Index = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isGuestlistOpen, setIsGuestlistOpen] = useState(false);
   const { toast } = useToast();
 
@@ -71,15 +68,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <EventNavbar 
-        onMenuClick={() => setIsMobileMenuOpen(true)} 
-      />
-      
-      <MobileMenu 
-        isOpen={isMobileMenuOpen} 
-        onClose={() => setIsMobileMenuOpen(false)} 
-      />
-
       <main className="flex-1 container mx-auto px-4 py-8 lg:py-12">
         <div className="grid lg:grid-cols-[1fr_300px] gap-8">
           {/* Main Content */}
