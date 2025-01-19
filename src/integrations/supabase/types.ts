@@ -9,6 +9,81 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      events: {
+        Row: {
+          cost: string | null
+          created_at: string | null
+          currency: string | null
+          details: string | null
+          event_date: string
+          event_time: string
+          genre_1: string | null
+          genre_2: string | null
+          guestlist: boolean | null
+          guestlist_message: string | null
+          id: number
+          line_up: string | null
+          main_image: string
+          meta_tags: string | null
+          min_age: string | null
+          name: string
+          promoter_email: string | null
+          recommended: boolean | null
+          slug: string | null
+          ticket_link: string | null
+          venue_name: string
+          video_url: string | null
+        }
+        Insert: {
+          cost?: string | null
+          created_at?: string | null
+          currency?: string | null
+          details?: string | null
+          event_date: string
+          event_time: string
+          genre_1?: string | null
+          genre_2?: string | null
+          guestlist?: boolean | null
+          guestlist_message?: string | null
+          id?: number
+          line_up?: string | null
+          main_image: string
+          meta_tags?: string | null
+          min_age?: string | null
+          name: string
+          promoter_email?: string | null
+          recommended?: boolean | null
+          slug?: string | null
+          ticket_link?: string | null
+          venue_name: string
+          video_url?: string | null
+        }
+        Update: {
+          cost?: string | null
+          created_at?: string | null
+          currency?: string | null
+          details?: string | null
+          event_date?: string
+          event_time?: string
+          genre_1?: string | null
+          genre_2?: string | null
+          guestlist?: boolean | null
+          guestlist_message?: string | null
+          id?: number
+          line_up?: string | null
+          main_image?: string
+          meta_tags?: string | null
+          min_age?: string | null
+          name?: string
+          promoter_email?: string | null
+          recommended?: boolean | null
+          slug?: string | null
+          ticket_link?: string | null
+          venue_name?: string
+          video_url?: string | null
+        }
+        Relationships: []
+      }
       TEST_EVENTS: {
         Row: {
           category: string
