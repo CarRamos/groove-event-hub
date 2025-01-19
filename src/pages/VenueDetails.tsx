@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/lib/supabase";
 import { Venue } from "@/lib/supabase";
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 import EventNavbar from "@/components/EventNavbar";
 import EventFooter from "@/components/EventFooter";
 import { useToast } from "@/components/ui/use-toast";

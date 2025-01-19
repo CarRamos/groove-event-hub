@@ -1,3 +1,5 @@
+import { MapPin } from "lucide-react";
+
 interface VenueHeroProps {
   name: string;
   address: string;
